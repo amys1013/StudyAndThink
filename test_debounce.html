@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <input type="text" />
+
+    <script src="./debounce_test.js"></script>
+    <script>
+      let count = 0;
+
+      const inputChange = function () {
+        console.log(this, event); //this应该一直指向input
+        console.log(`执行了第${++count}次触发函数`);
+      };
+      const inputEl = document.querySelector("input");
+
+      //   oninput 是赋值为一个函数，则debounce返回的应该是一个函数；
+      inputEl.oninput = debounce(inputChange, 200);
+    </script>
+  </body>
+</html>
