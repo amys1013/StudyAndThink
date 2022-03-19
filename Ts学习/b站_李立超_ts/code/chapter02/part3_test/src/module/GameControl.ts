@@ -56,8 +56,8 @@ class GameControl {
     let Y = this.snack.Y;
     this.isCheckEat(X, Y);
 
-    console.log("this.direction: ", this.direction);
-    console.log("Y: ", Y);
+    // console.log("this.direction: ", this.direction);
+    // console.log("Y: ", Y);
 
     try {
       switch (this.direction) {
@@ -87,7 +87,7 @@ class GameControl {
     this.isLive &&
       setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30);
 
-    console.log("Y: ", this.snack.Y);
+    // console.log("Y: ", this.snack.Y);
   }
 
   // 检查蛇是否吃到了实物,参数为蛇的坐标

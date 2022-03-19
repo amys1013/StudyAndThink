@@ -21,7 +21,9 @@ class Snack {
   set X(value: number) {
     if (value < 0 || value > 290) {
       throw Error("蛇撞墙了");
-      }
+    }
+    
+
       //设置的水平修改坐标，在左移动的时候，禁止右
       //如何知道掉头了？判断舌头和第二节是否一样---先判断有没有第二节
       if (this.bodies[1] && (this.bodies[1] as HTMLElement).offsetLeft === value) {
@@ -33,9 +35,12 @@ class Snack {
           } else { 
             value = this.X + 10;
           }
-      }
+    }
+    
+    
         this.moveBody();
-        this.head.style.left = value + "px";
+    this.head.style.left = value + "px";
+    this.checkHeadBody();
       
   
   }
@@ -56,6 +61,7 @@ class Snack {
     }
     this.moveBody();
     this.head.style.top = value + "px";
+    this.checkHeadBody();
   }
   // 蛇增加身体---向snack里面添加div
   addBody() {
@@ -75,6 +81,27 @@ class Snack {
       (this.bodies[i] as HTMLElement).style.left =
         (this.bodies[i - 1] as HTMLElement).offsetLeft + "px";
     }
+  }
+
+
+  // 检查头和身体有没有相撞
+  checkHeadBody() { 
+    // 获取所有的身体，判断是否和蛇头产生重叠；
+
+    let flag = false;
+    for (let i = 1; i < this.bodies.length; i++) { 
+      if (((this.bodies[i] as HTMLElement).offsetLeft === this.X) && ((this.bodies[i] as HTMLElement).offsetTop === this.Y)) { 
+        flag = true;
+        throw Error('撞到自己了。')
+      }
+    }
+    
+  
+    
+    // const flag = this.bodies.find((item as HTMLElement) => { 
+    //   return item.offsetTop === this.X;
+    // })
+    // console.log(`flag`, flag);
   }
 }
 
