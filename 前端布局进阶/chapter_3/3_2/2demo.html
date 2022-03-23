@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            注意3. margin-top传递的现象要注意；父元素出现塌陷现象：也就是父元素带着子元素一起下移了一段距离
+                    解决：父元素增加border;给父元素overflow:hidden-----弹性布局和网格布局可以解决（重点）
+            
+        */
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: pink;
+            /* 解决塌陷问题 */
+            overflow: hidden; 
+        }
+        .box2{
+            width:100px;
+            height:100px;
+            background:skyblue;
+            margin-top:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+</body>
+
+</html>

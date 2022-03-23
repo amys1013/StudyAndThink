@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 
+        由于两个盒子都是设置的浮动，则body没有高度：父容器撑不开：高度塌陷
+        解决：清除浮动
+        */
+        body{
+            border:1px black solid;
+        }
+        .box1{
+            width:100px;
+            height:100px;
+            background:pink;
+            float:right;
+        }
+        .box2{
+            width:200px;
+            height:200px;
+            background:skyblue;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

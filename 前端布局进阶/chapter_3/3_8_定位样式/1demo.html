@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            position: static(默认) | relative | absolute | sticky（粘性定位） | fixed(固定定位)
+            相对定位：不脱离；是相当于自身进行偏移；不会对其他元素进行影响；
+            绝对定位：脱离文档流；
+        */
+        .box1{
+            width:100px;
+            height:100px;
+            background:pink;
+        }
+        .box2{
+            width:100px;
+            height:100px;
+            background:skyblue;
+            position: relative;
+            left:100px;
+            top:100px;
+            /* margin-left:100px;
+            margin-top:100px; */
+        }
+        .box3{
+            width:100px;
+            height:100px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

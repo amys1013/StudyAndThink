@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+            1.只会影响后面的元素；---灵魂出窍；
+            2.box3的文字不会被浮动的box2所覆盖；--- 因为当初设置浮动主要为了图文工排：文字绕着图片；
+          
+
+        */
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background: pink;
+      }
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background: skyblue;
+        float: left;
+      }
+      .box3 {
+        width: 300px;
+        height: 300px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+
+    <div class="box3">
+      <div class="box2"></div>
+      1我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子我是一个浮动的盒子
+    </div>
+  </body>
+</html>
