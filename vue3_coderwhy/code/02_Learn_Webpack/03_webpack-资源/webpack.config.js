@@ -25,6 +25,7 @@ module.exports = {
           "less-loader"
         ]
       },
+      // jpe?g   问号表示一个或者零个；
       // {
       //   test: /\.(jpe?g|png|gif|svg)$/,
       //   use: {
@@ -36,6 +37,13 @@ module.exports = {
       //     }
       //   }
       // },
+
+      // webpack5现在已经是很稳定了，通过添加4种类型，来替换所有的loader
+      // asset/resource
+      // asset/inline
+      // asset/source  
+      // asset
+     // webpack会自动帮忙修改图片路径
       {
         test: /\.(jpe?g|png|gif|svg)$/,
         type: "asset",
