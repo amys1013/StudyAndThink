@@ -17,7 +17,7 @@ module.exports = {
   devServer: {
     contentBase: "./public",
     hot: true,
-    host: "0.0.0.0",
+    host: "0.0.0.0", //是为了让别人的主机能访问到我的电脑上，改成自己的ip地址
     port: 7777,
     open: true,
     // compress: true,

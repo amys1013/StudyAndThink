@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+      .wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-grow: auto;
+        background-color: aqua;
+      }
+      .left {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .left div:nth-of-type(1) {
+        flex-grow: 3;
+        background-color: pink;
+      }
+
+      .left div:nth-of-type(2) {
+        flex-grow: 2;
+        background-color: skyblue;
+      }
+
+      .right {
+        background-color: yellow;
+        flex: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="right">3</div>
+    </div>
+  </body>
+</html>
