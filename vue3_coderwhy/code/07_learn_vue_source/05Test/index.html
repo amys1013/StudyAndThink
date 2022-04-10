@@ -11,19 +11,30 @@
 
     <script src="./render.js"></script>
     <script>
-    // minivue-01【渲染器的实现】---h函数的实现
+      // minivue-01【渲染器的实现】---h函数的实现
       // 1.通过h函数来创建一个VNode
       // h(标签，参数，子节点)
       const VNode = h("div", { class: "why" }, [
         h("h2", null, "当前计数：100"),
-        h("button", {onClick:function(){
-            console.log('1')
-        }}, "+1"),
+        h(
+          "button",
+          {
+            onClick: function () {
+              console.log("1");
+            },
+          },
+          "+1"
+        ),
       ]);
 
       //2. 通过Mount函数将vnode挂载在div=app上面
-      mount(VNode,document.querySelector('#app'));
-      console.log('VNode: ', VNode);
+      mount(VNode, document.querySelector("#app"));
+
+      // 3.创建新的VNode,
+      const VNode1 = h("div", { class: "coderWhy", name: "aaa" }, "哈哈哈哈");
+
+      // 根据新旧虚拟节点进行比较后做出具体动作；
+      patch(VNode, VNode1);
     </script>
   </body>
 </html>
